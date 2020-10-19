@@ -32,9 +32,9 @@ public class EmloyeePayrollService {
 	public static void main(String[] args) {
 		List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
 		EmloyeePayrollService employeePayrollService = new EmloyeePayrollService(employeePayrollList);
-		Scanner consoleInputReader = new Scanner(System.in);
-		employeePayrollService.readEmployeePayrollData(consoleInputReader);
-		employeePayrollService.writeEmployeePayrollData(consoleInputReader);
+		Scanner readFromConsoleUsingScanner = new Scanner(System.in);
+		employeePayrollService.readEmployeePayrollData(readFromConsoleUsingScanner);
+		employeePayrollService.writeEmployeePayrollData(readFromConsoleUsingScanner);
 	}
 }
 
