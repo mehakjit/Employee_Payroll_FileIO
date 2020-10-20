@@ -38,6 +38,11 @@ public class EmloyeePayrollService {
 			return new EmployeePayrollFileIOService().countEntries();
 		return 0;
 	}
+
+	public void printData(IOService ioService) {
+		if(ioService.equals(IOService.FILE_IO))
+			new EmployeePayrollFileIOService().printData();
+	}
 	
 }
 
