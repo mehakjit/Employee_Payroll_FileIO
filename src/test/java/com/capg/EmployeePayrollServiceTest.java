@@ -1,5 +1,6 @@
 package com.capg;
 
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 
 import org.junit.Assert;
@@ -20,5 +21,12 @@ public class EmployeePayrollServiceTest {
 		employeePayrollService.writeEmployeePayrollData(IOService.FILE_IO);
 		employeePayrollService.printData(IOService.FILE_IO);
 		Assert.assertEquals(3, employeePayrollService.countEntries(IOService.FILE_IO));
+	}
+	
+	@Test
+	public void givenFileOnReadingFromFileShouldMatchEmployeeCount() throws FileNotFoundException {
+		EmloyeePayrollService employeePayrollService = new EmloyeePayrollService();
+		long entries = employeePayrollService.readEmployeePayRollData(IOService.FILE_IO);
+		Assert.assertEquals(3, entries);
 	}
 }

@@ -1,5 +1,7 @@
 package com.capg;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -43,6 +45,19 @@ public class EmloyeePayrollService {
 		if(ioService.equals(IOService.FILE_IO))
 			new EmployeePayrollFileIOService().printData();
 	}
-	
+
+	public long readEmployeePayRollData(IOService fileIo) throws FileNotFoundException {
+		long count = 0;
+		if(fileIo.equals(IOService.FILE_IO)) {
+		//	new EmployeePayrollFileIOService()
+			  File file = new File("payroll-file.txt"); 
+		    Scanner sc = new Scanner(file); 
+		    while (sc.hasNextLine()) {
+		      System.out.println(sc.nextLine());
+		      count++;
+		    }
+		}
+		return count;
+	}
 }
 
